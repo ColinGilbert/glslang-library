@@ -1,5 +1,4 @@
 // Copyright (C) 2007 Dave Griffiths
-// Licence: GPLv2 (see COPYING)
 // Fluxus Shader Library
 // ---------------------
 // Refract/reflect combined with facing ratio, and blinn specular
