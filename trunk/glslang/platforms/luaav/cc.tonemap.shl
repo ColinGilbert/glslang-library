@@ -1,0 +1,42 @@
+Shader
+{
+	name = "cc.tonemap.shl",
+	description = [[ Modify the tone of a texture with a LUT ]],
+	language = "GLSL",
+	
+	parameters =
+	{
+		Parameter {
+			0,
+			name = "tex0", type = "int",
+			description = "First texture",
+		},
+		
+		Parameter {
+			1,
+			name = "tex1", type = "int",
+			description = "Second texture",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program
+{
+	type = "vertex",
+	file = "cc.tonemap.vert.glsl",
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program
+{
+	type = "fragment",
+	file = "cc.tonemap.frag.glsl",
+},
+
+--------------------------------------------------------------------------
+}

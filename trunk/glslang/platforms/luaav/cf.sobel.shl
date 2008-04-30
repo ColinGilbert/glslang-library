@@ -1,0 +1,47 @@
+Shader
+{
+	name = "cf.sobel.shl",
+	description = [[ Basic Sobel Filter ]],
+	language = "GLSL",
+	
+	parameters = {
+		Parameter {
+			1,
+			name = "width", type = "float", 
+			description =  "Width of convolution kernel",
+		},
+		
+		Parameter {
+			1,
+			name = "scale", type = "float",
+			description = "Output scale",
+		},
+		
+		Parameter {
+			0,
+			name = "image", type = "int",
+			description = "Input texture",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program
+{
+	type = "vertex",
+	file = "cf.sobel.vert.glsl",
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program
+{
+	type = "fragment",	--must be defined
+	file = "cf.sobel.frag.glsl",
+},
+
+--------------------------------------------------------------------------
+}

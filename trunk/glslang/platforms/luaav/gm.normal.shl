@@ -1,0 +1,61 @@
+Shader
+{
+	name = "gm.normal.shl",
+	description = [[ Normal visualization shader ]],
+	language = "GLSL",
+	
+	parameters =
+	{
+		Parameter {
+			{1., 0., 0., 1.},
+			name = "c1", type = "vec4", 
+			description =  "Color value at vertex",
+		},
+		
+		Parameter {
+			{0., 0., 1., 1.},
+			name = "c2", type = "vec4", 
+			description =  "Color value at normal tip",
+		},
+		
+		Parameter {
+			1.,
+			name = "scale", type = "float", 
+			description =  "Scale of normals",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program
+{
+	type = "vertex",
+	file = "gm.normal.vert.glsl",
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Geometry Program
+--------------------------------------------------------------------------
+Program
+{
+	type = "geometry",	--must be defined
+	vertices_out = 6,
+	input_type = "triangles",
+	output_type = "line_strip",
+	
+	file = "gm.normal.geom.glsl",
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program
+{
+	type = "fragment",
+	file = "gm.normal.frag.glsl",
+},
+
+--------------------------------------------------------------------------
+}

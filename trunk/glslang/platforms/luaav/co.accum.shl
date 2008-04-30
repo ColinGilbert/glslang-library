@@ -1,0 +1,51 @@
+Shader
+{
+	name = "co.accum.shl",
+	description = [[ Feedback accumulation shader ]],
+	language = "GLSL",
+	
+	parameters =
+	{
+		Parameter
+		{
+			{0, 0, 0, 0.1},
+			name = "erase_color", type = "vec4", 
+			description =  "Feedback erase color",
+		},
+		
+		Parameter
+		{
+			0,
+			name = "tex0", type = "int",
+			description = "Input texture",
+		},
+		
+		Parameter
+		{
+			1,
+			name = "tex1", type = "int",
+			description = "Feedback texture",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program
+{
+	type = "vertex",
+	file = "co.accum.vert.glsl",
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program
+{
+	type = "fragment",
+	file = "co.accum.frag.glsl",
+},
+
+--------------------------------------------------------------------------
+}

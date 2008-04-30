@@ -1,0 +1,60 @@
+Shader
+{
+	name = "cc.brcosa.shl",
+	description = [[ BRightness / COntrast / SAturation shader ]],
+	language = "GLSL",
+	
+	parameters =
+	{
+		Parameter {
+			{0.62, 0.62, 0.62},
+			name = "avgluma", type = "vec3", 
+			description =  "base luminance value",
+		},
+		
+		Parameter {
+			1.,
+			name = "brightness", type = "float", 
+			description =  "brightness value",
+		},
+		
+		Parameter {
+			1.,
+			name = "contrast", type = "float", 
+			description =  "contrast value",
+		},
+		
+		Parameter {
+			1.,
+			name = "saturation", type = "float", 
+			description =  "saturation value",
+		},
+		
+		Parameter {
+			1.,
+			name = "alpha", type = "float", 
+			description =  "???",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program
+{
+	type = "vertex",
+	file = "cc.brcosa.vert.glsl",
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program
+{
+	type = "fragment",	--must be defined
+	file = "cc.brcosa.frag.glsl"
+},
+
+--------------------------------------------------------------------------
+}

@@ -1,0 +1,48 @@
+Shader
+{
+	name = "co.xfade.shl",
+	description = [[ Crossfade two textures ]],
+	language = "GLSL",
+	
+	parameters =
+	{
+		Parameter {
+			0.5,
+			name = "xfade", type = "float", 
+			description =  "Crossfade amount",
+		},
+		
+		Parameter {
+			0,
+			name = "tex0", type = "int",
+			description = "First texture",
+		},
+		
+		Parameter {
+			1,
+			name = "tex1", type = "int",
+			description = "Second texture",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program
+{
+	type = "vertex",
+	file = "co.xfade.vert.glsl",
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program
+{
+	type = "fragment",
+	file = "co.xfade.frag.glsl",
+},
+
+--------------------------------------------------------------------------
+}
