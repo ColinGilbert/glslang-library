@@ -1,0 +1,42 @@
+Shader
+{
+	name = "op.normal.shl",
+	description = [[ Normal Operator (calculates normals for an inputs mesh) ]],
+	language = "GLSL",
+	
+	parameters =
+	{
+		Parameter {
+			1.,
+			name = "eps", type = "float",
+			description = "sampling spread between points for calculation the cross product",
+		},
+	
+		Parameter {
+			0,
+			name = "tex0", type = "int",
+			description = "First texture",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program
+{
+	type = "vertex",
+	file = "op.normal.vert.glsl"
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program
+{
+	type = "fragment",
+	file = "op.normal.frag.glsl,
+},
+
+--------------------------------------------------------------------------
+}

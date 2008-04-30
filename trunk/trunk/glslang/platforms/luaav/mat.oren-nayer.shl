@@ -1,0 +1,48 @@
+Shader
+{
+	name = "mat.oren-nayer.shl",
+	description = [[ per-pixel diffuse Oren-Nayer model ]],
+	language = "GLSL",
+	
+	parameters =
+	{	
+		Parameter {
+			{1., 1., 1., 1.},
+			name = "Ka", type = "vec4",
+			description = "ambient material",
+		},
+		
+		Parameter {
+			{0.3, 0.3, 0.3, 1.},
+			name = "Kd", type = "vec4",
+			description = "diffuse material",
+		},
+		
+		Parameter {
+			0,
+			name = "lookup", type = "int",
+			description = "O-N Lookup Table",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program
+{
+	type = "vertex",
+	file = "mat.oren-nayer.vert.glsl",
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program
+{
+	type = "fragment",
+	file = "mat.oren-nayer.frag.glsl",
+},
+
+--------------------------------------------------------------------------
+}
